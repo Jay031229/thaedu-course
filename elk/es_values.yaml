@@ -1,0 +1,18 @@
+replicas: 3
+esConfig:
+  elasticsearch.yml: |
+    xpack.security.enabled: false
+    xpack.monitoring.collection.enabled: true
+resources:
+  requests:
+    cpu: "100m"
+    memory: "512Mi"
+  limits:
+    cpu: "1000m"
+    memory: "2Gi"
+persistence:
+  enabled: true
+  storageClass: "standard"
+  accessModes:
+    - ReadWriteOnce
+  size: 10Gi
